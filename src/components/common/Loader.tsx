@@ -54,8 +54,8 @@ const Loader: React.FC<LoaderProps> = ({ onDone }) => {
         }}
       />
 
-      <div className="relative flex flex-col items-center px-6">
-        <div className="relative h-[min(78vw,300px)] w-[min(78vw,300px)] sm:h-[340px] sm:w-[340px]">
+      <div className="relative flex flex-col items-center px-5">
+        <div className="relative h-44 w-44 sm:h-[340px] sm:w-[340px]">
           <motion.div
             aria-hidden="true"
             className="absolute left-1/2 top-1/2 h-[82%] w-[82%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#FFF8EE] shadow-[0_24px_60px_rgba(0,0,0,0.22)]"
@@ -122,7 +122,7 @@ const Loader: React.FC<LoaderProps> = ({ onDone }) => {
           </motion.div>
         </div>
 
-        <div className="mt-7 flex items-center gap-2 sm:gap-3">
+        <div className="mt-5 flex items-center gap-1.5 sm:mt-7 sm:gap-3">
           {beats.map((word, index) => (
             <React.Fragment key={word}>
               {index > 0 && (
@@ -131,7 +131,7 @@ const Loader: React.FC<LoaderProps> = ({ onDone }) => {
                 </span>
               )}
               <motion.span
-                className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#FFF8EE] sm:text-xs sm:tracking-[0.22em]"
+                className="font-sans text-[9px] font-semibold uppercase tracking-[0.14em] text-[#FFF8EE] sm:text-xs sm:tracking-[0.22em]"
                 initial={{ opacity: reducedMotion ? 1 : 0.28 }}
                 animate={
                   reducedMotion
@@ -151,7 +151,7 @@ const Loader: React.FC<LoaderProps> = ({ onDone }) => {
         </div>
 
         <motion.p
-          className="mt-4 font-serif text-base italic text-[#FFF8EE]/80 sm:text-lg"
+          className="mt-3 font-serif text-sm italic text-[#FFF8EE]/80 sm:mt-4 sm:text-lg"
           initial={reducedMotion ? false : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: reducedMotion ? 0.2 : 0.6, delay: reducedMotion ? 0 : 0.55, ease }}
