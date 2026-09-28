@@ -18,14 +18,14 @@ const defaultValues: CommunityValue[] = [
     id: 'share-food',
     title: 'Share food',
     description:
-      'Extra plates stay in the neighbourhood, free, and turn into new friends.',
+      'A meal offered freely can turn a nearby stranger into someone you are glad to know.',
     icon: HeartHandshake,
   },
   {
     id: 'support-families',
     title: 'Support families',
     description:
-      'Home cooks sell what they already make, and a neighbour picks it up.',
+      'Home cooks share what they already make, and a neighbour collects it with care.',
     icon: Users,
   },
   {
@@ -39,7 +39,7 @@ const defaultValues: CommunityValue[] = [
     id: 'grow-together',
     title: 'Grow together',
     description:
-      'A small kilometre range, so the people you meet are the people nearby.',
+      'The circle stays within a kilometre, so the people you meet are the people who live close by.',
     icon: Sprout,
   },
 ];

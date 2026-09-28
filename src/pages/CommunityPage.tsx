@@ -38,19 +38,20 @@ const CommunityPage: React.FC = () => {
           >
             <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium italic text-[#0F6B4F]!">
               <Leaf size={14} className="shrink-0" />
-              <span>Free food</span>
+              <span>Offered freely</span>
               <span aria-hidden="true">·</span>
-              <span>About 1 km</span>
+              <span>Within a kilometre</span>
               <span aria-hidden="true">·</span>
-              <span>New friends</span>
+              <span>Among neighbours</span>
             </p>
             <h1 className="mt-4 max-w-xl font-serif text-[2rem]! font-semibold! leading-[1.05]! tracking-[-0.03em] text-[#0B2E20]! sm:text-5xl! lg:text-6xl!">
-              Sit down with
-              <span className="block italic text-[#0F6B4F]!">someone nearby</span>
+              A place kept
+              <span className="block italic text-[#0F6B4F]!">at a nearby table</span>
             </h1>
             <p className="mt-4 max-w-md text-sm leading-7 text-[#3E3A1D]! sm:mt-5 sm:text-base">
-              Extra plates stay in the neighbourhood. Accept a seat, walk over,
-              and leave as friends. Nothing is charged.
+              When a home has more than it needs, that kindness stays close.
+              Accept an invitation, walk over, and share a meal that asks
+              nothing in return.
             </p>
             <div className="mt-6 flex flex-col items-start gap-4 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center">
               <a
@@ -58,13 +59,13 @@ const CommunityPage: React.FC = () => {
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0B2E20] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(11,46,32,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0F6B4F] sm:w-auto"
               >
                 <Heart size={16} />
-                See shared meals
+                Find a place at the table
               </a>
               <Link
                 to={ROUTES.MARKETPLACE}
                 className="text-sm font-semibold text-[#0B2E20] underline decoration-[#D4AF37] underline-offset-4"
               >
-                Or request a plate to buy
+                Or request a plate to collect
               </Link>
             </div>
           </motion.div>
@@ -95,12 +96,12 @@ const CommunityPage: React.FC = () => {
             ))}
             <div className="absolute inset-x-3 bottom-3 max-w-none rounded-2xl bg-white px-3 py-2.5 shadow-[0_12px_28px_rgba(11,46,32,0.12)] sm:inset-x-auto sm:bottom-8 sm:left-6 sm:max-w-[14rem] sm:px-4 sm:py-3">
               <p className="font-serif text-base font-semibold text-[#0B2E20] sm:text-lg">
-                {joined ? joined.title : 'Five plates. No bill.'}
+                {joined ? joined.title : 'A place kept for you'}
               </p>
               <p className="mt-1 break-words text-xs leading-5 text-[#3E3A1D]">
                 {joined
-                  ? `You're joining ${joined.contributorName} · ${joined.availableTime}`
-                  : 'A neighbour cooked extra and left a seat open.'}
+                  ? `A place with ${joined.contributorName} · ${joined.availableTime}`
+                  : 'Someone nearby cooked a little more, and saved you a seat.'}
               </p>
             </div>
           </motion.div>
@@ -116,15 +117,15 @@ const CommunityPage: React.FC = () => {
       <section id="shared-meals" className="scroll-mt-20 px-4 py-10 sm:px-5 lg:scroll-mt-32 lg:px-6">
         <div className="mx-auto w-full max-w-[1440px]">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#0F6B4F]! sm:tracking-[0.2em]">
-            Food sharing
+            Shared meals
           </p>
           <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
             <h2 className="max-w-lg font-serif text-2xl! font-semibold! leading-tight! text-[#0B2E20]! sm:text-4xl! lg:text-5xl!">
-              Meals with an open seat
+              An open place at the table
             </h2>
             <p className="max-w-sm text-sm leading-6 text-[#3E3A1D]!">
-              Join a table within about a kilometre. The cook keeps what the
-              family needs and shares the rest.
+              These meals are offered within about a kilometre. The family
+              keeps what it needs, and welcomes neighbours to the rest.
             </p>
           </div>
 
@@ -146,7 +147,7 @@ const CommunityPage: React.FC = () => {
           <CommunityMapPreview
             locations={communityMapLocations}
             title="A short walk from your door"
-            description="Free meals, home cooks, and plant groups stay inside a small kilometre range."
+            description="Shared meals, home kitchens, and garden circles remain within a gentle kilometre of home."
           />
         </div>
       </section>
@@ -154,10 +155,10 @@ const CommunityPage: React.FC = () => {
       <section className="px-4 pb-16 pt-8 sm:px-5 lg:px-6">
         <div className="mx-auto w-full max-w-[1440px]">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#0F6B4F]! sm:tracking-[0.2em]">
-            Neighbours
+            From the neighbourhood
           </p>
           <h2 className="mt-3 max-w-lg font-serif text-2xl! font-semibold! leading-tight! text-[#0B2E20]! sm:text-4xl! lg:text-5xl!">
-            Stories from the street
+            Stories from nearby homes
           </h2>
           <div className="mt-6 grid gap-4 sm:mt-8 sm:gap-6 lg:grid-cols-3">
             {communityStories.map((story) => (

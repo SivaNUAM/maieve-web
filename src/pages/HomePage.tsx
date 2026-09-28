@@ -20,6 +20,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import heroScene from '../assets/images/hero-neighborhood.png';
+import sharedMeal from '../assets/images/shared-meal.jpg';
 import HowItWorks from '../components/home/HowItWorks';
 import PickupJourney from '../components/home/PickupJourney';
 import ImageWithFallback from '../components/ui/ImageWithFallback';
@@ -540,13 +541,13 @@ const HomePage: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={viewport}
             transition={{ duration: 0.75, ease }}
-            className="group overflow-hidden rounded-[2rem]"
+            className="group overflow-hidden rounded-[1.4rem] sm:rounded-[2rem]"
           >
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1563379091339-03246963d96c?w=1200&auto=format&fit=crop"
-              alt="A shared homemade biryani meal"
-              containerClassName="h-[360px] w-full sm:h-[440px]"
-              className="transition-transform duration-700 ease-out group-hover:scale-105"
+              src={sharedMeal}
+              alt="Neighbours sharing biryani at a table in the lane"
+              containerClassName="aspect-[16/9] h-auto w-full sm:aspect-[3/2] lg:aspect-auto lg:h-[440px]"
+              className="object-center transition-transform duration-700 ease-out group-hover:scale-105"
             />
           </motion.div>
           <motion.div
@@ -560,16 +561,16 @@ const HomePage: React.FC = () => {
               Food sharing
             </p>
             <h2 className="mt-3 max-w-lg text-3xl font-extrabold tracking-[-0.03em] text-[#0B2E20]! sm:text-5xl">
-              Five plates of biryani. No bill. New friends.
+              A biryani shared, and a friendship begun.
             </h2>
             <p className="mt-4 max-w-lg text-sm leading-7 text-[#3E3A1D]! sm:text-base">
-              If someone has food to spare, they can invite people within
-              about a kilometre. Strangers nearby can accept, sit down, and
-              leave as friends. Nothing is charged. The point is the meal and
-              the company.
+              When a home has food to spare, it can welcome people within
+              about a kilometre. Neighbours who have never met may sit down
+              together and leave knowing one another. The meal is offered
+              freely. What remains is the company.
             </p>
             <Link to={ROUTES.COMMUNITY} className={`${buttonGhost} mt-8`}>
-              Join a shared meal
+              Come to a shared meal
             </Link>
           </motion.div>
         </div>

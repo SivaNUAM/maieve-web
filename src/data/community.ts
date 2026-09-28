@@ -8,10 +8,10 @@ export const communityStories: CommunityStory[] = [
     role: 'Home Cook',
     location: 'Kochi',
     story:
-      'Sharing homemade meals helped me connect with people in my neighborhood and reduce food waste.',
+      'What our family could not finish became a reason for someone nearby to knock. They came for a plate, and stayed long enough to feel like home.',
     image:
       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop',
-    contribution: 'Shared homemade meals',
+    contribution: 'Keeps a place at her table',
   },
   {
     id: 'story-2',
@@ -19,10 +19,10 @@ export const communityStories: CommunityStory[] = [
     role: 'Plant Enthusiast',
     location: 'Ernakulam',
     story:
-      'Growing plants at home has helped my family explore a healthier and more sustainable lifestyle.',
+      'A cutting from our balcony crossed the wall and started a friendship. The garden taught us how to eat, and then how to welcome the people next door.',
     image:
       'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop',
-    contribution: 'Grew organic plants',
+    contribution: 'Shares cuttings from home',
   },
   {
     id: 'story-3',
@@ -30,49 +30,49 @@ export const communityStories: CommunityStory[] = [
     role: 'Community Volunteer',
     location: 'Kakkanad',
     story:
-      'Food sharing creates meaningful connections and helps neighbors support one another.',
+      'A shared meal does what a message cannot. People who arrived as strangers sit down together, and leave knowing they have someone nearby.',
     image:
       'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop',
-    contribution: 'Organized local food sharing',
+    contribution: 'Brings neighbours to one table',
   },
 ];
 
 export const foodSharingItems: FoodSharingItem[] = [
   {
     id: 'sharing-1',
-    title: 'Homemade Vegetable Meals',
+    title: 'A vegetable meal, made with care',
     description:
-      'Fresh homemade vegetarian meals prepared with locally sourced ingredients.',
+      'Anjali cooked more than her family needed. These vegetarian plates were made at home, and a place has been kept for anyone who can walk over this evening.',
     image:
       'https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop',
     contributorName: 'Anjali',
-    location: 'Nearby Community',
+    location: 'A short walk from home',
     availableTime: 'Today, 6:00 PM',
     servings: 5,
     category: 'Free Sharing',
   },
   {
     id: 'sharing-2',
-    title: 'Fresh Homemade Snacks',
+    title: 'Snacks for the families nearby',
     description:
-      'Traditional homemade snacks prepared for sharing with nearby families.',
+      'Meera prepared a batch of traditional snacks for the homes around her. There is enough to share, and the only thing asked in return is your company.',
     image:
       'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop',
     contributorName: 'Meera',
-    location: 'Local Neighborhood',
+    location: 'In the neighbourhood',
     availableTime: 'Today, 4:00 PM',
     servings: 8,
     category: 'Extra Food',
   },
   {
     id: 'sharing-3',
-    title: 'Community Breakfast',
+    title: 'Breakfast for the neighbourhood',
     description:
-      'A simple homemade breakfast shared with neighbors in the local community.',
+      'Rahul is setting a simple breakfast so the morning can begin together. Come tomorrow, take a seat, and start the day among people who live close by.',
     image:
       'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=800&auto=format&fit=crop',
     contributorName: 'Rahul',
-    location: 'Community Center',
+    location: 'The neighbourhood table',
     availableTime: 'Tomorrow, 9:00 AM',
     servings: 10,
     category: 'Community Meal',

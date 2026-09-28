@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import Loader from './components/common/Loader';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import { NeighborhoodProvider } from './context/Neighborhood';
@@ -15,27 +17,36 @@ import AboutPage from './pages/AboutPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const App: React.FC = () => {
+  const [ready, setReady] = useState(false);
+
   return (
     <BrowserRouter>
       <NeighborhoodProvider>
-      <ScrollToTop />
-      <div className="flex min-h-screen flex-col">
-        <Navbar />
+        <AnimatePresence>
+          {!ready && <Loader key="maeive-loader" onDone={() => setReady(true)} />}
+        </AnimatePresence>
+        {ready && (
+          <>
+            <ScrollToTop />
+            <div className="flex min-h-screen flex-col">
+              <Navbar />
 
-        <div className="flex-1">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/recipes" element={<RecipePage />} />
-            <Route path="/plants" element={<PlantsPage />} />
-            <Route path="/marketplace" element={<MarketplacePage />} />
-            <Route path="/community" element={<CommunityPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </div>
+              <div className="flex-1">
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/recipes" element={<RecipePage />} />
+                  <Route path="/plants" element={<PlantsPage />} />
+                  <Route path="/marketplace" element={<MarketplacePage />} />
+                  <Route path="/community" element={<CommunityPage />} />
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="*" element={<NotFoundPage />} />
+                </Routes>
+              </div>
 
-        <Footer />
-      </div>
+              <Footer />
+            </div>
+          </>
+        )}
       </NeighborhoodProvider>
     </BrowserRouter>
   );

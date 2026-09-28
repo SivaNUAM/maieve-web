@@ -49,7 +49,7 @@ const FoodSharingCard: React.FC<FoodSharingCardProps> = ({
           </span>
           <div className="min-w-0">
             <p className="truncate text-sm font-semibold text-[#0B2E20]!">{item.contributorName}</p>
-            <p className="text-[11px] text-[#1C1C24]!">Sharing with neighbors</p>
+            <p className="text-[11px] text-[#1C1C24]!">Sharing a meal nearby</p>
           </div>
           <Heart
             size={18}
@@ -66,7 +66,7 @@ const FoodSharingCard: React.FC<FoodSharingCardProps> = ({
         <div className="mt-5 grid gap-2 text-sm text-[#3E3A1D]">
           <p className="flex items-start gap-2">
             <MapPin size={15} className="mt-0.5 shrink-0 text-[#0F6B4F]" />
-            <span className="min-w-0 break-words">{item.location} · about 1 km</span>
+            <span className="min-w-0 break-words">{item.location} · within a kilometre</span>
           </p>
           <p className="flex items-start gap-2">
             <Clock size={15} className="mt-0.5 shrink-0 text-[#0F6B4F]" />
@@ -74,7 +74,9 @@ const FoodSharingCard: React.FC<FoodSharingCardProps> = ({
           </p>
           <p className="flex items-start gap-2">
             <Users size={15} className="mt-0.5 shrink-0 text-[#0F6B4F]" />
-            <span className="min-w-0 break-words">{item.servings} plates, nothing to pay</span>
+            <span className="min-w-0 break-words">
+              {item.servings} places, offered freely
+            </span>
           </p>
         </div>
 
@@ -88,7 +90,7 @@ const FoodSharingCard: React.FC<FoodSharingCardProps> = ({
               : 'bg-[#0F6B4F] text-white shadow-[0_10px_24px_rgba(15,107,79,0.22)] hover:bg-[#0B2E20]'
           }`}
         >
-          {joined ? "You're at the table" : 'Join this meal'}
+          {joined ? 'Your place is held' : 'Accept this invitation'}
         </button>
       </div>
     </article>
