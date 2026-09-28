@@ -249,7 +249,7 @@ const HomePage: React.FC = () => {
       <PickupJourney />
 
       <section className="border-t border-[#D4AF37] bg-[#FFF8EE] px-4 py-14 sm:px-5 lg:px-6">
-        <div className="mx-auto grid w-full max-w-[1440px] gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid w-full max-w-[1440px] grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           {[
             {
               title: 'Recipes',
@@ -285,15 +285,15 @@ const HomePage: React.FC = () => {
             >
               <Link
                 to={item.href}
-                className="group block h-full rounded-2xl bg-white p-5 shadow-[0_10px_30px_rgba(11,46,32,0.05)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(11,46,32,0.1)]"
+                className="group flex h-full flex-col rounded-2xl bg-white p-3.5 shadow-[0_10px_30px_rgba(11,46,32,0.05)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(11,46,32,0.1)] sm:p-5"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#FFF8EE] text-[#0F6B4F] transition-transform duration-300 group-hover:scale-110">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FFF8EE] text-[#0F6B4F] transition-transform duration-300 group-hover:scale-110 sm:h-11 sm:w-11 sm:rounded-2xl">
                   <item.icon size={18} />
                 </span>
-                <h2 className="mt-4 text-lg font-bold text-[#0B2E20]!">
+                <h2 className="mt-3 break-words text-base! font-semibold! leading-tight! text-[#0B2E20]! sm:mt-4 sm:text-lg!">
                   {item.title}
                 </h2>
-                <p className="mt-2 text-sm leading-6 text-[#3E3A1D]!">
+                <p className="mt-1.5 text-xs leading-5 text-[#3E3A1D]! sm:mt-2 sm:text-sm sm:leading-6">
                   {item.text}
                 </p>
               </Link>
