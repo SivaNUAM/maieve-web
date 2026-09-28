@@ -1,10 +1,12 @@
 import React from 'react';
 import { ArrowUpRight, Facebook, Instagram, Youtube } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 import maeiveLogo from '../assets/images/maeive-logo.png';
 
 const Footer = () => {
+  const reducedMotion = useReducedMotion();
   const currentYear = new Date().getFullYear();
 
   const columns = [
@@ -114,11 +116,33 @@ const Footer = () => {
 
         <div className="mt-8 flex flex-col gap-2 border-t border-white/10 pt-5 text-xs text-[#D4AF37] sm:mt-12 sm:flex-row sm:items-center sm:justify-between sm:pt-6 sm:text-sm">
           <p className="text-[#D4AF37]!">
-            © {currentYear} Nourish. All rights reserved.
+            © {currentYear} Maeive. All rights reserved.
           </p>
           <p className="text-[#D4AF37]!">
             Homemade food, within walking distance.
           </p>
+        </div>
+
+        <div className="mt-6 flex justify-center sm:mt-8">
+          <motion.div
+            aria-hidden="true"
+            className="h-36 w-36 sm:h-44 sm:w-44"
+            style={{
+              backgroundColor: 'rgba(255, 248, 238, 0.16)',
+              WebkitMaskImage: `url(${maeiveLogo})`,
+              maskImage: `url(${maeiveLogo})`,
+              WebkitMaskRepeat: 'no-repeat',
+              maskRepeat: 'no-repeat',
+              WebkitMaskPosition: 'center',
+              maskPosition: 'center',
+              WebkitMaskSize: 'contain',
+              maskSize: 'contain',
+            }}
+            initial={reducedMotion ? false : { opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: reducedMotion ? 0 : 0.8, ease: [0.22, 1, 0.36, 1] }}
+          />
         </div>
       </div>
     </footer>
