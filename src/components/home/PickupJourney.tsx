@@ -121,7 +121,10 @@ const Parcel: React.FC<{ className?: string }> = ({ className = '' }) => (
   </div>
 );
 
-const Neighborhood: React.FC<{ compact?: boolean }> = ({ compact = false }) => (
+const Neighborhood: React.FC<{
+  compact?: boolean;
+  door: MotionValue<number>;
+}> = ({ compact = false, door }) => (
   <svg
     viewBox={compact ? '600 100 480 560' : '0 0 1200 700'}
     className="h-full w-full"
@@ -162,14 +165,48 @@ const Neighborhood: React.FC<{ compact?: boolean }> = ({ compact = false }) => (
     <rect x="228" y="448" width="18" height="120" rx="4" fill="#8A6244" />
     <path d="M48 500c36-100 86-104 118 2" fill="#87A58A" />
     <rect x="98" y="492" width="14" height="84" rx="3" fill="#8A6244" />
-    <path d="M1020 410c28-84 70-86 96 4" fill="#5E7C64" />
-    <rect x="1062" y="404" width="14" height="96" rx="3" fill="#8A6244" />
+    {compact ? null : (
+      <>
+        <path d="M1020 410c28-84 70-86 96 4" fill="#5E7C64" />
+        <rect x="1062" y="404" width="14" height="96" rx="3" fill="#8A6244" />
+      </>
+    )}
     <rect x="688" y="268" width="286" height="214" rx="10" fill="#F7F1E6" />
     <path d="M664 278 832 148l176 130" fill="url(#pickup-roof)" />
     <path d="M700 278h262" stroke="#D4AF37" strokeWidth="6" />
     <rect x="792" y="348" width="72" height="134" rx="6" fill="#6B4E32" />
-    <rect x="804" y="360" width="48" height="78" rx="3" fill="#8A6244" />
-    <circle cx="848" cy="412" r="3.5" fill="#D4AF37" />
+    <rect x="808" y="364" width="40" height="108" fill="#3A2418" />
+    <foreignObject x="804" y="360" width="48" height="112">
+      <div
+        xmlns="http://www.w3.org/1999/xhtml"
+        style={{ width: '100%', height: '100%', perspective: '70px' }}
+      >
+        <motion.div
+          style={{
+            position: 'relative',
+            width: '100%',
+            height: '100%',
+            transformOrigin: 'left center',
+            rotateY: door,
+            background: '#8A6244',
+            borderRadius: 2,
+            boxShadow: 'inset -6px 0 0 rgba(0,0,0,0.18)',
+          }}
+        >
+          <span
+            style={{
+              position: 'absolute',
+              right: '14%',
+              top: '46%',
+              width: '16%',
+              aspectRatio: '1',
+              borderRadius: 999,
+              background: '#D4AF37',
+            }}
+          />
+        </motion.div>
+      </div>
+    </foreignObject>
     <rect x="724" y="308" width="52" height="62" rx="4" fill="#D7E6CF" />
     <path d="M750 308v62M724 338h52" stroke="#F7F1E6" strokeWidth="3" />
     <rect x="888" y="308" width="52" height="62" rx="4" fill="#F6E7C4" />
@@ -227,6 +264,8 @@ const CookFigure: React.FC<{ wave: MotionValue<number> }> = ({ wave }) => (
     <rect x="50" y="98" width="12" height="40" rx="6" fill="#6B4E32" />
     <ellipse cx="40" cy="140" rx="11" ry="5" fill="#3D342C" />
     <ellipse cx="56" cy="140" rx="11" ry="5" fill="#2C2420" />
+    <path d="M32 36c-8 14-8 34-2 52 6-16 8-30 6-42 1 14 2 26 2 36 6-14 8-30 4-46-2-2-6-2-10 0Z" fill="#2C2420" />
+    <path d="M62 32c8 12 10 30 4 50-6-16-6-30-4-42-1 16 0 28 2 38-8-16-10-34-6-48 1-1 3-1 4 2Z" fill="#2C2420" />
     <path d="M30 60c0-12 8-18 20-18s20 6 20 18v40c0 8-8 12-20 12s-20-4-20-12V60Z" fill="#0F6B4F" />
     <path d="M34 52h28c1 8-4 14-14 14S33 60 34 52Z" fill="#D4AF37" />
     <path d="M36 80h24v16c0 4-5 8-12 8s-12-4-12-8V80Z" fill="#245743" />
@@ -251,10 +290,34 @@ const CookFigure: React.FC<{ wave: MotionValue<number> }> = ({ wave }) => (
       <circle cx="-14" cy="90" r="2.6" fill="#E7C2A6" />
     </motion.g>
     <circle cx="50" cy="32" r="16" fill="#E7C2A6" />
-    <path d="M34 28c2-14 30-16 34 2-8 3-26 3-34-2Z" fill="#2C2420" />
+    <path d="M32 30c4-18 32-18 36 2-8 2-12-6-18-6s-12 8-18 4Z" fill="#2C2420" />
     <circle cx="45" cy="33" r="1.6" fill="#3D342C" />
     <circle cx="56" cy="33" r="1.6" fill="#3D342C" />
     <path d="M46 39c2.4 2.4 7 2.4 9 0" stroke="#C4896A" strokeWidth="1.4" fill="none" strokeLinecap="round" />
+  </svg>
+);
+
+export const DaughterFigure: React.FC<{ className?: string }> = ({
+  className = 'h-28 w-16 drop-shadow-sm sm:h-36 sm:w-20',
+}) => (
+  <svg viewBox="0 0 72 120" className={className} aria-hidden="true">
+    <ellipse cx="36" cy="114" rx="16" ry="4" fill="#5C4030" opacity="0.14" />
+    <rect x="26" y="78" width="8" height="28" rx="4" fill="#C4A574" />
+    <rect x="38" y="78" width="8" height="28" rx="4" fill="#D4B896" />
+    <ellipse cx="30" cy="108" rx="7" ry="3.5" fill="#6B4E32" />
+    <ellipse cx="42" cy="108" rx="7" ry="3.5" fill="#5C4030" />
+    <path d="M22 48c0-6 6-10 14-10s14 4 14 10l4 26c0 10-8 16-18 16s-18-6-18-16l4-26Z" fill="#F3E6C8" />
+    <path d="M28 46h16c1 5-3 9-8 9s-9-4-8-9Z" fill="#0F6B4F" />
+    <path d="M22 54c-6 8-8 18-4 26" stroke="#E7C2A6" strokeWidth="6" strokeLinecap="round" fill="none" />
+    <ellipse cx="16" cy="82" rx="5" ry="4" fill="#E7C2A6" />
+    <path d="M50 54c6 8 8 18 4 26" stroke="#E7C2A6" strokeWidth="6" strokeLinecap="round" fill="none" />
+    <ellipse cx="56" cy="82" rx="5" ry="4" fill="#E7C2A6" />
+    <path d="M44 18c8 6 8 16 2 24-4-6-4-12-2-16-1 8 1 14 3 18-5-8-7-16-5-24 1-1 2-2 2-2Z" fill="#2C2420" />
+    <circle cx="36" cy="28" r="12" fill="#E7C2A6" />
+    <path d="M24 26c2-14 22-16 26-2-6 2-16 3-22 1Z" fill="#2C2420" />
+    <circle cx="32" cy="29" r="1.3" fill="#3D342C" />
+    <circle cx="40" cy="29" r="1.3" fill="#3D342C" />
+    <path d="M33 34c1.6 1.6 5 1.6 6.4 0" stroke="#C4896A" strokeWidth="1.1" fill="none" strokeLinecap="round" />
   </svg>
 );
 
@@ -516,8 +579,11 @@ const PickupJourney: React.FC = () => {
     [0, 1, 1, 0],
   );
 
-  const cookLeftWide = useTransform(scrollYProgress, [0.52, 0.64], ['64%', '46%']);
-  const cookLeftCompact = useTransform(scrollYProgress, [0.52, 0.64], ['70%', '58%']);
+  const cookLeftWide = useTransform(scrollYProgress, [0.52, 0.64], ['62%', '46%']);
+  const cookLeftCompact = useTransform(scrollYProgress, [0.5, 0.66], ['30%', '58%']);
+  const doorOpen = useTransform(scrollYProgress, [0.44, 0.58, 0.9], [0, -78, -78]);
+  const cookScale = useTransform(scrollYProgress, [0.5, 0.64], [0.72, 1]);
+  const cookRise = useTransform(scrollYProgress, [0.5, 0.64], [-18, 0]);
   const cookOpacity = useTransform(
     scrollYProgress,
     [0.5, 0.58, 0.86, 0.94],
@@ -582,7 +648,7 @@ const PickupJourney: React.FC = () => {
           style={{ opacity: sceneOpacity, x: sceneX, scale: sceneScale }}
         >
           <motion.div className="absolute inset-0" style={{ y: leavesY }}>
-            <Neighborhood compact={isCompact} />
+            <Neighborhood compact={isCompact} door={doorOpen} />
           </motion.div>
         </motion.div>
 
@@ -592,12 +658,25 @@ const PickupJourney: React.FC = () => {
         >
           <motion.div
             className="absolute bottom-28 z-10 lg:bottom-[6%]"
-            style={{ left: cookLeft, opacity: cookOpacity }}
+            style={{
+              left: cookLeft,
+              opacity: cookOpacity,
+              scale: cookScale,
+              y: cookRise,
+              transformOrigin: 'center bottom',
+            }}
           >
             {step > 0 && step < 4 && DIALOGUE[line].speaker === 'Anjali' ? (
               <HeadBubble key={DIALOGUE[line].id} line={DIALOGUE[line]} side="anjali" />
             ) : null}
-            <CookFigure wave={cookWave} />
+            <div className="relative">
+              <div className="absolute bottom-0 left-[70%] z-0 sm:left-[78%]">
+                <DaughterFigure />
+              </div>
+              <div className="relative z-10">
+                <CookFigure wave={cookWave} />
+              </div>
+            </div>
           </motion.div>
 
           <motion.div

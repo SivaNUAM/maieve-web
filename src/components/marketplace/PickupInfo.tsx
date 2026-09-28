@@ -1,6 +1,8 @@
 import React from 'react';
 import { CalendarClock, Info, MapPin, ShieldCheck } from 'lucide-react';
 
+import { DaughterFigure } from '../home/PickupJourney';
+
 export interface PickupDetails {
   location: string;
   address?: string;
@@ -109,9 +111,9 @@ const PickupInfo: React.FC<PickupInfoProps> = ({ pickup, compact = false }) => {
         )}
       </div>
 
-      <div className="mt-5 flex items-start gap-2.5 rounded-2xl bg-[#FFF8EE] p-4">
-        <ShieldCheck size={18} className="mt-0.5 shrink-0 text-[#0F6B4F]" />
-        <div className="min-w-0">
+      <div className="mt-5 flex items-center gap-2.5 rounded-2xl bg-[#FFF8EE] p-4">
+        <ShieldCheck size={18} className="mt-0.5 shrink-0 self-start text-[#0F6B4F]" />
+        <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold text-[#0B2E20]!">
             Meet the cook nearby
           </p>
@@ -119,6 +121,7 @@ const PickupInfo: React.FC<PickupInfoProps> = ({ pickup, compact = false }) => {
             Confirm the pickup time, and keep the handoff inside a short walk.
           </p>
         </div>
+        <DaughterFigure className="h-16 w-10 shrink-0" />
       </div>
     </section>
   );
