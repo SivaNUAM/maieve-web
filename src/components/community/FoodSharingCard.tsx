@@ -38,7 +38,7 @@ const FoodSharingCard: React.FC<FoodSharingCardProps> = ({
           {item.category}
         </span>
         <span className="absolute right-3 top-3 rounded-full bg-[#0B2E20] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#FFF8EE] sm:right-4 sm:top-4 sm:tracking-[0.14em]">
-          Free
+          Happy Sharing
         </span>
       </div>
 
