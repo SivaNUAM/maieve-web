@@ -360,7 +360,7 @@ const HomePage: React.FC = () => {
             <ImageWithFallback
               src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1200&auto=format&fit=crop"
               alt="A home cook preparing a meal with fresh ingredients"
-              containerClassName="h-[360px] w-full sm:h-[460px]"
+              containerClassName="aspect-[3/2] h-auto w-full sm:aspect-auto sm:h-[460px]"
               className="transition-transform duration-700 ease-out group-hover:scale-105"
             />
           </motion.div>
@@ -379,7 +379,7 @@ const HomePage: React.FC = () => {
             <ImageWithFallback
               src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&auto=format&fit=crop"
               alt="Organic plants growing for a home garden"
-              containerClassName="h-[360px] w-full sm:h-[460px]"
+              containerClassName="aspect-[3/2] h-auto w-full sm:aspect-auto sm:h-[460px]"
               className="transition-transform duration-700 ease-out group-hover:scale-105"
             />
           </motion.div>
