@@ -1,0 +1,153 @@
+/* =========================================
+   Global Base Styles
+========================================= */
+
+@import "tailwindcss";
+@import "./typography.css";
+@import "./animations.css";
+
+/* =========================================
+   Root Variables
+========================================= */
+
+:root {
+  --color-emerald: #0f6b4f;
+  --color-forest: #0b2e20;
+  --color-champagne: #d4af37;
+  --color-jet: #000000;
+  --color-antique: #3e3a1d;
+  --color-charcoal: #1c1c24;
+  --color-vanilla: #fff8ee;
+
+  --color-primary: #0f6b4f;
+  --color-primary-light: #0b2e20;
+  --color-accent: #d4af37;
+  --color-accent-hover: #3e3a1d;
+
+  --color-background: #fff8ee;
+  --color-surface: #fff8ee;
+  --color-surface-soft: #fff8ee;
+
+  --color-border: #d4af37;
+
+  --color-text-primary: #0b2e20;
+  --color-text-secondary: #3e3a1d;
+  --color-text-muted: #1c1c24;
+
+  --radius-card: 1.5rem;
+  --radius-button: 9999px;
+
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================
+   Reset
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--color-background);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* =========================================
+   Selection
+========================================= */
+
+::selection {
+  color: var(--color-vanilla);
+  background-color: var(--color-emerald);
+}
+
+/* =========================================
+   Scrollbar
+========================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: var(--color-champagne);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-light);
+}
+
+/* =========================================
+   Focus Styles
+========================================= */
+
+:focus-visible {
+  outline: 3px solid rgba(212, 175, 55, 0.75);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   Utility Classes
+========================================= */
+
+.page-background {
+  background-color: var(--color-background);
+}
+
+.surface-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background-color: var(--color-surface);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
